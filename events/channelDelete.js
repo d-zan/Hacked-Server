@@ -9,7 +9,7 @@ module.exports = {
     if (!CHANNEL_NAME) return;
     if (!ServerID) return;
     const guild = client.guilds.cache.get(ServerID);
-    if (!guild) return console.log("Can't find this server");
+    if (!guild) return console.error("Can't find this server");
     const channelName = CHANNEL_NAME.toLowerCase();
     const channelsToDelete = guild.channels.cache
       .filter((channel) => channel.name === channelName)
